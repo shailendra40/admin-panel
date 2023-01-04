@@ -23,6 +23,7 @@ class SiteSettingSeeder extends Seeder
             'office_address' => 'Test Office',
             'office_contact' => 'Test Contact',
             'office_mail' => 'Test Mail',
+            "slogan" => "Lorem this is some random slogan that I want to be displayed",
             'main_logo' => 'mainlogo.jpg',
             'side_logo' => 'sidelogo.jpg',
             'facebook_link' => 'https://www.facebook.com/',

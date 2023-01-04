@@ -86,6 +86,7 @@ class SiteSettingController extends Controller
             'office_address'=>'required|string',
             'office_contact'=>'required|string',
             'office_mail'=>'required|string',
+            'slogan' => 'string',
             'main_logo'=>'required|image|mimes:jpg,png,jpeg,gif,svg|max:1536',
             'side_logo'=>'image|mimes:jpg,png,jpeg,gif,svg|max:1536',
             'face_link'=>'url',
@@ -108,7 +109,7 @@ class SiteSettingController extends Controller
         if ($request->hasFile('side_logo')) {
 
             $newSideLogo = time() . '-' . '.' .$request->side_logo->extension();
-            $request->side_logo->move(public_path('uploads/sitesettings/'), $newSideLogo );
+            $request->side_logo->move(public_path('uploads/sitesetting/'), $newSideLogo );
     
           
             Storage::delete('public/uploads/sitesetting/' . $newSideLogo);
@@ -122,6 +123,7 @@ class SiteSettingController extends Controller
         $sitesetting->office_address=$request->office_address;
         $sitesetting->office_contact=$request->office_contact;
         $sitesetting->office_mail=$request->office_mail;
+        $sitesetting->slogan=$request->slogan;
         $sitesetting->main_logo= $newMainLogo ;
         $sitesetting->side_logo=$newSideLogo;
         $sitesetting->facebook_link=$request->face_link;

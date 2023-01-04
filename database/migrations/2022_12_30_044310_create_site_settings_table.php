@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('office_address');
             $table->string('office_contact');
             $table->string('office_mail');
+            $table->longText('slogan');
             $table->string('main_logo');
             $table->string('side_logo')->nullable();
             $table->string('facebook_link')->nullable();

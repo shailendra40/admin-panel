@@ -47,6 +47,14 @@
                     <input type="email" name="office_mail" class="form-control"
                         value="{{ $sitesetting->office_mail ?? '' }}" placeholder="Email">
                 </div>
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Slogan</label>
+                    <textarea type="text" name="slogan" class="form-control"
+                        value="" id="summernote">
+                        {{ $sitesetting->slogan ?? '' }}
+                    </textarea>
+                </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Main Logo</label>
                     <input type="file" name="main_logo" class="form-control" value="{{ $sitesetting->main_logo ?? '' }}"
