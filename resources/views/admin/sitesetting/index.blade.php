@@ -11,6 +11,7 @@
             <th>Office Contact</th>
             <th>Main Logo</th>
             <th>Side Logo</th>
+            <th>Action</th>
         
         </tr>
     </thead>
@@ -21,15 +22,22 @@
                 <td>{{ $sitesetting->office_mail ?? '' }}</td>
                 <td>{{ $sitesetting->office_contact ?? '' }}</td>
                 <td > 
-                    <img id="preview1"  src="{{ asset($sitesetting->main_logo) }}"
-                    style="width: 150px; height:150px" />
+                    <img id="preview1"  src="{{ asset("uploads/sitesetting/" .$sitesetting->main_logo) }}"
+                    style="width: 100px; height:100px" />
                 </td>
                 <td > 
-                    <img id="preview1"  src="{{ asset($sitesetting->side_logo)}}"
-                    style="width: 150px; height:150px" />
+                    <img id="preview1"  src="{{ asset("uploads/sitesetting/" .$sitesetting->side_logo)}}"
+                    style="width: 100px; height:100px" />
                 </td>
-                
-                
+                <td>
+                    <a href="/admin/sitesetting/edit/{{ $sitesetting->id }}">
+                            <div style="display: flex; flex-direction:row;">
+                                <button type="button" class="btn btn-block btn-warning btn-sm">
+                                    <i class="fas fa-edit"></i> Update 
+                                </button>
+                            </div>
+                    </a>
+                </td>
             </tr>
         @endforeach
     </tbody>

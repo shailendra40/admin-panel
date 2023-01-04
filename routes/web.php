@@ -28,6 +28,8 @@ Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
 
 // FOR SITESETTING
 Route::get('admin/sitesetting/index',[SiteSettingController::class,'index'])->name('admin.sitesetting.index');
+Route::get('admin/sitesetting/edit/{id}',[SiteSettingController::class,'edit'])->name('admin.sitesetting.edit');
+Route::post('admin/sitesetting/update',[SiteSettingController::class,'update'])->name('admin.sitesetting.update');
 
 // FOR ABOUT
 Route::get('admin/about/index',[AboutController::class,'index'])->name('admin.about.index');
