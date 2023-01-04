@@ -83,7 +83,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" data-widget="control-sidebar" data-controlsidebar-slide="true" href="{{ route('admin.index') }}"
+            <a class="nav-link" href="{{ route('admin.index') }}"
                 role="button">
                 <i class="fa fa-power-off" aria-hidden="true"></i>
             </a>
