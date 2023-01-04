@@ -129,4 +129,5 @@ class AboutController extends Controller
         $about->delete();
         return redirect('admin/about/index')->with(['successMessage' => 'About Page Deleted']);
     }
+
 }

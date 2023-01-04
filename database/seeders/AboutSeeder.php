@@ -18,7 +18,7 @@ class AboutSeeder extends Seeder
     {
         About::create([
             'title' => "Test About Title",
-            'image' => "uploads/about/image1.jpg",
+            'image' => "image1.jpg",
             'content' => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, quia in voluptas aperiam asperiores dolores enim ducimus iste ratione, vel optio odit placeat aspernatur? Reiciendis neque commodi quo aperiam ducimus!"
         ]);
     }

@@ -17,7 +17,7 @@
                     <td>{{ $about->title ?? '' }}</td>
                     <td>{{ $about->content ?? '' }}</td>
                     <td>
-                        <img id="preview1" src="{{ asset($about->image) }}" style="width: 150px; height:150px" />
+                        <img id="preview1" src="{{ url("uploads/about/" . $about->image) }}" style="width: 100px; height:100px" />
                     </td>
 
 
@@ -28,16 +28,46 @@
                                 <button type="button" class="btn-block btn-warning btn-sm"> Update
                                 </button>
                         </a>
-                        <a href="{{ url('admin/about/destroy/' . $about->id) }}">
-                            <button type="button" class="btn-block btn-danger btn-sm" data-toggle="modal"
-                                data-target="#modal-default" style="width:auto;"
-                                onclick="replaceLinkFunction">Delete</button>
-                        </a>
+                        {{-- {{ url('admin/about/destroy/' . $about->id) }} --}}
+                        <button type="button" class="btn-block btn-danger btn-sm" data-toggle="modal"
+                            data-target="#exampleModal" style="width:auto;" onclick="replaceLinkFunction">
+                            Delete
+                        </button>
+
+                        {{-- #modal-default --}}
                     </td>
                 </tr>
             @endforeach
         </tbody>
     </table>
+
+    @foreach ($abouts as $about)
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Are you sure?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+
+                    <a href="{{ url('admin/about/destroy/' . $about->id) }}">
+                        <button type="button" class="btn btn-danger">Yes</button>
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+        
+    @endforeach
+    
 
     <script>
         const previewImage1 = e => {
@@ -48,5 +78,9 @@
                 preview.src = reader.result;
             };
         };
+
+        $('#myModal').on('shown.bs.modal', function() {
+            $('#myInput').trigger('focus')
+        })
     </script>
 @endsection

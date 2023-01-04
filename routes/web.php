@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\DialogueController;
 use App\Http\Controllers\SiteSettingController;
 
 /*
@@ -23,7 +24,6 @@ Route::get('/', function () {
 // FOR ADMIN 
 
 Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
-
 
 
 // FOR SITESETTING

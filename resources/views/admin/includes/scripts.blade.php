@@ -32,3 +32,9 @@
 <script src="{{ asset('css/adminasset/dist/js/demo.js') }}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{ asset('css/adminasset/dist/js/pages/dashboard.js') }}"></script>
+
+<script type="text/javascript">
+  $('#summernote').summernote({
+      height: 400
+  });
+</script>

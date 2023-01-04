@@ -2,7 +2,6 @@
 
 
 @section('content')
-
     <!-- Main content -->
     <section class="content">
         <div class="container-fluid">
@@ -61,8 +60,8 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Facebook URL</label>
-                    <input type="url" name="facebook_link" class="form-control" value="{{ $sitesetting->facebook_link ?? '' }}"
-                        placeholder="Facebook URL (https://)">
+                    <input type="url" name="facebook_link" class="form-control"
+                        value="{{ $sitesetting->facebook_link ?? '' }}" placeholder="Facebook URL (https://)">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Insta URL</label>
