@@ -1,0 +1,19 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Post extends Model
+{
+    use HasFactory;
+
+    protected $fillable = ['name', 'email', 'image', 'documents']; 
+
+    // Define the many-to-many relationship
+    public function categories()
+    {
+        return $this->belongsToMany(Category::class, 'category_post');
+    }
+}
